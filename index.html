@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/favicon.svg" type="image/x-icon">
+    <script type="module"  src="script.js"></script>
+    <title>WeatherZen-Weather App</title>
+</head>
+<body class="box-border p-0 m-0 overflow-x-hidden bg-purple-700 ">
+    <div class="wrapper bg-purple-700 w-full">
+        <h1 class="heading text-white font-bold text-[2.2rem] uppercase text-center mt-8">Weather App</h1>
+        <div class="tab-container max-w-[550px] flex justify-between p-2 mx-auto mt-12">
+            <p class="tab cursor-pointer text-gray-300 px-2 py-1 font-semibold" yourWeather-tab>Your Weather</p>
+            <p class="tab cursor-pointer text-gray-300 px-2 py-1 font-semibold" search-tab>Search Weather</p>
+        </div>
+
+        <div class="weather-container w-[100vw] px-2 flex flex-col justify-center items-center gap-4 mt-8">
+            <!-- Grant location container -->
+            <div class="grant-location-container flex-col justify-center items-center gap-4 hidden">
+                <img src="./images/location.png" alt="" width="80" loading="lazy" class="bg-blue-300 rounded-full">
+                <h2 class="text-white font-semibold text-[1.85rem] ">Grant Location Access</h2>
+                <p class="text-white" location-access>Allow Access To Get Weather Information</p>
+                <div class="grant-access-btn text-white px-4 rounded-md py-2 uppercase font-semibold mt-1
+                bg-[rgba(219,225,239,0.5)] shadow-[0px_5px_15px_rgba(0,0,0,0.35)] cursor-pointer">Grant Access</div>
+            </div>
+            <!-- search weather input form -->
+            <form class="form-container hidden w-[100%] max-w-[34.375rem] mx-auto justify-center items-center mb-[3rem]" data-form>
+                <input data-searchInput placeholder="Search For City..." class="font-semibold h-[40px] w-[100%]
+                 focus:outline-[white] px-4 text-[1.1rem] rounded-[0.5rem] bg-[rgba(219,225,239,0.5)] text-white placeholder:text-white">
+                <button class="search-btn ml-3 border p-2 rounded-full bg-[rgba(219,225,239,0.5)]" type="submit"> 
+                    <img src="./images/search.svg" alt="" class="search-icon" width="25">
+                </button>
+            </form>
+
+            <!-- Loading container -->
+            <div class="loading-container flex-col justify-center items-center hidden">
+                <img src="./images/loading-gif.gif" alt="" class="loading-gif rounded-full" width=80>
+                <h2 class="loading-text font-semibold text-white text-[1.2rem] uppercase">Loading</h2>
+            </div>
+
+            <!-- main container-->
+            <!-- Weather UI container -->
+            <div class="show-weather-container flex-col justify-center items-center py-3 px-2 hidden">
+                <div class="user-location flex justify-center items-center gap-3">
+                    <p data-cityName class="text-white font-semibold text-[2.3rem]"></p>
+                    <img data-countryIcon width="30">
+                </div>
+                <p data-weather-desc class="text-white font-medium text-[1.9rem] capitalize"></p>
+                <img data-weatherIcon width="40px">
+                <h2 class="temperature text-white text-[2.8rem] font-bold" data-temperature></h2>
+                <!-- 3 Div -->
+                <div class="w-full grid xs:grid-cols-2 s:grid-cols-3 gap-4 mt-6 mx-auto">
+                    <div class="windspeed bg-[rgba(219,225,239,0.5)] flex flex-col justify-center items-center py-3 rounded-[0.5rem] px-2 row-start-1 row-end-3 s:row-end-2">
+                        <img src="./images/windspeed.png" alt="" loading="lazy" width="70" class="h-[50px] bg-[rgba(219,225,239,0)]">
+                        <h2 class="text-white font-medium text-[1.8rem] capitalize">Windspeed</h2>
+                        <p data-windSpeed class="text-white text-[1.7rem] font-medium"></p>
+                    </div>
+                    <div class="humidity-container bg-[rgba(219,225,239,0.5)] flex flex-col justify-center items-center py-3 rounded-[0.5rem]">
+                        <img src="./images/humidity.png" alt="" loading="lazy" width="50" class="" >
+                        <h2 class="text-white font-medium text-[1.8rem] capitalize">Humidity</h2>
+                        <p data-humidity class="text-white text-[1.7rem] font-medium"></p>
+                    </div>
+                    <div class="clouds-container bg-[rgba(219,225,239,0.5)] flex flex-col justify-center items-center py-3 rounded-[0.5rem]">
+                        <img src="./images/clouds.png" alt="" loading="lazy" width="50" class="">
+                        <h2 class="text-white font-medium text-[1.8rem] capitalize">clouds</h2>
+                        <p data-clouds class="text-white text-[1.7rem] font-medium">
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- City Not found container -->
+            <div class="flex-col justify-center items-center hidden" error-message>
+                <img src="./images/not-found.png" alt="" width="300">
+                <p class="text-white font-medium text-[1.2rem]">city not found</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
