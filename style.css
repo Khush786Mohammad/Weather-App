@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tab.current-tab{
+    @apply bg-[rgba(219,225,239,0.5)] rounded-[4px] text-white shadow-[0px_5px_15px_rgba(0,0,0,0.35)];
+}
+
+.active{
+    @apply flex;
+}
+
+.form-container input{
+    width: calc(100%-80px);
+}
