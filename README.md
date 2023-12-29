@@ -12,3 +12,5 @@ WeatherZen is a sleek and user-friendly weather application that provides real-t
 2) CSS
 3) JavaScript
 4) Tailwind CSS
+
+   Hoisted Link: https://weatherzen-weather-app.netlify.app/
